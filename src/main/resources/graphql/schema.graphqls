@@ -1,0 +1,41 @@
+type Student {
+    id: ID!
+    firstName: String!
+    lastName: String!
+    dateOfBirth: String!
+    email: String!
+
+    academicDetails: AcademicDetails
+}
+
+type AcademicDetails {
+    enrollmentNumber: String!
+    program: String!
+    department: String!
+    currentSemester: Int!
+}
+
+type Query {
+    getStudent(id: ID!): Student
+    getAllStudents: [Student]
+}
+
+
+input AcademicDetailsInput {
+    enrollmentNumber: String!
+    program: String!
+    department: String!
+    currentSemester: Int!
+}
+
+input CreateStudentInput {
+    firstName: String!
+    lastName: String!
+    dateOfBirth: String!
+    email: String!
+    academicDetails: AcademicDetailsInput!
+}
+
+type Mutation {
+    createStudent(input: CreateStudentInput!): Student
+}
