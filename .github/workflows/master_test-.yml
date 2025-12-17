@@ -31,7 +31,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: java-app
-          path: target/myapp.jar
+          path: target/graphql_demo-0.0.1-SNAPSHOT.jar
 
   deploy:
     runs-on: ubuntu-latest
@@ -59,6 +59,7 @@ jobs:
         with:
           app-name: 'test-'
           slot-name: 'Production'
-          package: myapp.jar
+          package: graphql_demo-0.0.1-SNAPSHOT.jar
 
           
+
